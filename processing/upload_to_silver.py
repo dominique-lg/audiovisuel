@@ -1,0 +1,1 @@
+ # Envoi vers MinIO (bucket silver)

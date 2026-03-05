@@ -1,0 +1,1 @@
+ # Envoi résultats vers MinIO (bucket gold)
