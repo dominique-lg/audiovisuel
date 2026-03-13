@@ -1,0 +1,53 @@
+{
+  "knn": {
+    "accuracy": 0.9742,
+    "f1_macro": 0.9737,
+    "cv_f1_mean": 0.9733,
+    "cv_f1_std": 0.0045,
+    "confusion_matrix": [
+      [
+        862,
+        6
+      ],
+      [
+        34,
+        648
+      ]
+    ]
+  },
+  "random_forest": {
+    "accuracy": 1.0,
+    "f1_macro": 1.0,
+    "cv_f1_mean": 1.0,
+    "cv_f1_std": 0.0,
+    "confusion_matrix": [
+      [
+        868,
+        0
+      ],
+      [
+        0,
+        682
+      ]
+    ],
+    "feature_importances": {
+      "pct_female_mean": 0.2301,
+      "rolling_12m": 0.126,
+      "ecart_national": 0.595,
+      "month": 0.0009,
+      "year": 0.0099,
+      "media_type_enc": 0.0382
+    }
+  },
+  "best_model": "random_forest",
+  "features": [
+    "pct_female_mean",
+    "rolling_12m",
+    "ecart_national",
+    "month",
+    "year",
+    "media_type_enc"
+  ],
+  "n_samples": 7748,
+  "run_date": "2026-03-13T12:19:55.931262"
+}
