@@ -1,1 +1,0 @@
-#Envoi vers MinIO (bucket bronze)
