@@ -1,0 +1,16 @@
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: o_d_u_minio
+    ports:
+      - "9000:9000" # API pour ton script Python
+      - "9001:9001" # Console pour vérifier tes fichiers
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=password
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+
+volumes:
+  minio_data:

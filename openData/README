@@ -1,0 +1,33 @@
+*******Etape 1 et 2 :Nettoyage initial des colonnes et formats de date.
+
+Déploiement d'un stockage objet compatible S3 via Docker.
+
+Ingestion automatisée via Python vers un dossier partitionné (date=YYYY-MM-DD) pour respecter les bonnes pratiques du Data Engineering.
+
+Vérification : Confirmez la présence des fichiers JSON dans l'interface MinIO sous le chemin datalake/bronze/.
+
+*******Etape 3 : Lecture des données nettoyées depuis la couche Silver dans MinIO.
+
+Sélection des variables utiles pour le modèle de classification : theme, nb_subjects, duration_seconds, year, month.
+
+Définition de la problématique de data science : prédire la chaîne audiovisuelle à partir des thèmes diffusés afin d’évaluer la proximité thématique entre chaînes.
+
+Mise en place d’un pipeline de prétraitement avec encodage de la variable catégorielle theme et standardisation des variables numériques.
+
+Entraînement et comparaison de deux modèles de classification supervisée :
+
+K-Nearest Neighbors (KNN) et Random Forest
+
+Évaluation des modèles à l’aide de métriques simples :
+
+accuracy/precision/recall/F1-score
+
+Résultat principal : le modèle Random Forest obtient une accuracy d’environ 33,6%, supérieure au hasard et à une baseline naïve, mais qui reste modérée.
+
+Interprétation : cette performance suggère que plusieurs chaînes partagent des profils éditoriaux proches. Les thèmes diffusés permettent de distinguer partiellement les chaînes, sans les séparer fortement.
+
+Stockage des résultats dans la couche Gold de MinIO :
+
+métriques du modèle et prédictions du meilleur modèle
+
+Vérification : confirmer la présence des fichiers générés dans datalake/gold/.
