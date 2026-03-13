@@ -65,13 +65,13 @@ pb_dim_age (age_groupe) ── pb_info       (age_groupe)
 
 **Sources DS1 (1995–2019) + DS2 (2016–2020)**
 
-| Visual | Config |
-|---|---|
-| **Courbe** : % parole féminine par chaîne | X=`year` · Y=`pct_female_mean` · Légende=`channel` · Lignes ref : 40% et 50% |
-| **Heatmap** chaîne × année | Matrice : lignes=`channel` · colonnes=`year` · valeurs=`pct_female_mean` · Couleur rouge→vert |
-| **Tableau CSA** 4 métriques | `pct_female_presence` · `pct_female_speech` · `pct_female_experts` · `pct_female_journalists` |
-| **Barres** classement chaînes | Tri par `pct_female_mean` décroissant |
-| **Carte** : Année projection parité 50% | Filtre chaîne → `annee_parite_50` |
+| Visual | Fichier CSV | Colonnes utilisées |
+|---|---|---|
+| **Courbe** : % parole féminine par chaîne | `pb_parite.csv` | X=`year` · Y=`pct_female_mean` · Légende=`channel` · Lignes ref : `objectif_arcom` (40%) et `objectif_parite` (50%) |
+| **Heatmap** chaîne × année | `pb_parite.csv` | Lignes=`channel` · Colonnes=`year` · Valeurs=`pct_female_mean` · Couleur rouge→vert |
+| **Tableau CSA** 4 métriques officielles | `pb_csa.csv` | `channel` · `year` · `pct_female_presence` · `pct_female_speech` · `pct_female_experts` · `pct_female_journalists` |
+| **Barres** classement chaînes | `pb_parite.csv` | Y=`channel` · X=`pct_female_mean` · Tri décroissant · Filtre `year` via slicer |
+| **Carte** : Année projection parité 50% | `pb_parite.csv` | `channel` (filtre slicer) → valeur affichée = `annee_parite_50` |
 
 ---
 
