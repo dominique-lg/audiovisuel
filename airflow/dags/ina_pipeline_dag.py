@@ -1,17 +1,21 @@
 """airflow/dags/ina_pipeline_dag.py — DAG mensuel Bronze → Silver → Gold (5 datasets)"""
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.operators.bash import BashOperator  # ← un seul import, celui-ci fonctionne
 
 with DAG(
     dag_id="ina_pipeline",
     description="Pipeline INA Audiovisuel — 5 datasets — Bronze → Silver → Gold",
-    schedule_interval="0 6 1 * *",
+    schedule="0 6 1 * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    default_args={"owner":"maelle.fotso","retries":2,
-                  "retry_delay":timedelta(minutes=5),"email_on_failure":False},
-    tags=["ina","audiovisuel","arcom","open-data"],
+    default_args={
+        "owner": "maelle.fotso",
+        "retries": 2,
+        "retry_delay": timedelta(minutes=5),
+        "email_on_failure": False
+    },
+    tags=["ina", "audiovisuel", "arcom", "open-data"],
 ) as dag:
 
     start   = BashOperator(task_id="start",  bash_command="echo '=== Pipeline INA démarré ==='")

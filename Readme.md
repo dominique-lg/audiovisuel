@@ -388,13 +388,14 @@ Le projet couvre les **trois axes** avec **5 datasets open data réels et vérif
 git clone https://github.com/<org>/ina-audiovisuel-project.git
 cd ina-audiovisuel-project
 
-python -m venv venv && source venv/bin/activate
+python -m venv venv 
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 cp .env.example .env
 docker-compose up -d
 # MinIO : http://localhost:9001  (admin / password)
-# Airflow : http://localhost:8080  (airflow / airflow)
+# Airflow : http://localhost:8081  (airflow / airflow)
 
 python ingestion/download_all.py    # Bronze
 python processing/clean_all.py      # Silver
