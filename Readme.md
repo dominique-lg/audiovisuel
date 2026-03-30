@@ -75,7 +75,7 @@ Nous utilisons MinIO pour le Data Lake et Apache Airflow pour l'orchestration de
 ## Installation et lancement
 
 Nous avons structuré le dépôt pour faciliter le déploiement :
-```bash
+
 git clone https://github.com/<org>/ina-audiovisuel-project.git
 cd ina-audiovisuel-project
 
@@ -100,7 +100,7 @@ python ml/upload_to_gold.py         # Export Power BI
 
 ## Limites et vigilance
 
-Nous attirons l'attention sur le fait que le genre dans le DS1 est inféré automatiquement, ce qui peut induire des erreurs marginales. Pour les données ARCOM (DS4 et DS5), nous rappelons qu'il s'agit d'enquêtes ponctuelles de 2024 et non de données historiques longues. Nous devons impérativement utiliser les colonnes de poids pour toute analyse globale.
+Pour les données ARCOM (DS4 et DS5), nous rappelons qu'il s'agit d'enquêtes ponctuelles de 2024 et non de données historiques longues.
 
 ---
 
