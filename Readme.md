@@ -388,7 +388,8 @@ Le projet couvre les **trois axes** avec **5 datasets open data réels et vérif
 git clone https://github.com/<org>/ina-audiovisuel-project.git
 cd ina-audiovisuel-project
 
-python -m venv venv && source venv/bin/activate
+python -m venv venv 
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 cp .env.example .env
